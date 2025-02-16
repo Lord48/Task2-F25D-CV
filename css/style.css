@@ -1,0 +1,238 @@
+/* Grundinställningar */
+body {
+  background-color: rgb(246, 244, 244);
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.navbar {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  padding: 20px;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.nav-list li a.active {
+  color: #676161;
+  font-weight: bold;
+}
+
+.nav-list a:hover {
+  color: rgb(184, 184, 190);
+}
+
+/* Profilsektionen */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 50vh;
+  gap: 50px;
+  margin-top: 80px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  width: 500px;
+  height: 500px;
+  border: none;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-pic,
+.profile-info {
+  background-color: rgb(155, 151, 151);
+}
+
+.profile-info a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.profile-info a:hover {
+  color: white;
+}
+
+/* Projektsektionen */
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.projects a {
+  text-decoration: none;
+  color: white;
+}
+
+.projects a:hover {
+  color: lightgray;
+}
+
+.project-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  width: 100%;
+  max-width: 250px;
+  /* Maxbredd för korten */
+  height: 250px;
+  background: rgb(61, 61, 62);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.project-img {
+  max-width: 100%;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.footer a:hover {
+  color: rgb(184, 184, 190);
+}
+
+.footer i {
+  font-size: 30px;
+}
+
+/* Responsiv design för enheter med max 768px bredd (mobiler) */
+@media only screen and (max-width: 768px) {
+
+  /* Lägg till tillräckligt med padding-top för att förhindra att innehållet går bakom navbaren */
+  main {
+    padding-top: 80px;
+    /* Justera detta beroende på höjden på din navbar */
+  }
+
+  /* Profilsektion */
+  .profile-section {
+    margin-top: 40px;
+    gap: 30px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Profilkort */
+  .profile-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  /* Projektcontainer: Grid med två kolumner */
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Projektkort */
+  .project-card {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+  }
+
+  .project-img {
+    height: 120px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 15px;
+  }
+
+  .footer a {
+    margin: 5px 10px;
+  }
+}
+
+/* Responsiv design för större skärmar (fullskärm) */
+@media only screen and (min-width: 1024px) {
+  .project-container {
+    grid-template-columns: repeat(4, 1fr);
+    /* Fyra kolumner på större skärmar */
+    gap: 20px;
+  }
+
+  .project-card {
+    max-width: 300px;
+    /* Justera maxbredden för större skärmar */
+  }
+}
